@@ -1,0 +1,26 @@
+\definecolor{qqwwtt}{rgb}{0.,0.4,0.2}
+\definecolor{qqttcc}{rgb}{0.,0.2,0.8}
+\definecolor{yqqqqq}{rgb}{0.5019607843137255,0.,0.}
+\definecolor{ttzzqq}{rgb}{0.2,0.6,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.1cm,y=0.1cm]
+\clip(-13.644214162348867,-2.7972020725388598) rectangle (122.62521588946447,131.70159758203798);
+\draw [->,color=qqttcc] (70.29360967184802,34.03262521588946) -- (70.42633408930001,77.74071365934894);
+\draw [->,color=ttzzqq] (14.853195164075979,22.14451640759931) -- (70.29360967184802,34.03262521588946);
+\draw [color=qqwwtt](5.699481865284966,21.67831606217616) node[anchor=north west] {$\text{prior } x_{t-1}$};
+\draw [color=qqwwtt](53.54058721934364,31.235423143350598) node[anchor=north west] {$\text{predicted prior } \bar{x}_{t}$};
+\draw [color=yqqqqq](55.78583765112257,107.92537996545767) node[anchor=north west] {$\text{measurement } z_{t}$};
+\draw [color=yqqqqq](73.40241796200338,96.73657167530223) node[anchor=north west] {$\text{residual } y_t = z_t-\bar{x}_t$};
+\draw [color=qqttcc](73.40241796200338,84.14916234887735) node[anchor=north west] {$\text{posterior } x_{t}$};
+\draw [shift={(70.06665673372468,22.52709813310712)},dash pattern=on 3pt off 3pt,color=qqttcc]  plot[domain=1.5642821316180726:3.148521681255285,variable=\t]({1.*55.214787034631996*cos(\t r)+0.*55.214787034631996*sin(\t r)},{0.*55.214787034631996*cos(\t r)+1.*55.214787034631996*sin(\t r)});
+\draw (23.12607944732296,115.15148531951638) node[anchor=north west] {\Large{\textbf{Predictor Corrector Filter}}};
+\draw [->,color=qqttcc] (14.999546128134405,26.56269435070029) -- (14.853195164075979,22.14451640759931);
+\draw [->,color=yqqqqq] (70.46632124352324,90.90906735751295) -- (70.42633408930001,77.74071365934894);
+\draw (34.36960276338511,34.03262521588946) node[anchor=north west] {predict};
+\draw (74.7841105354058,57.808842832469765) node[anchor=north west] {update};
+\begin{scriptsize}
+\draw [fill=ttzzqq] (14.853195164075979,22.14451640759931) circle (2.5pt);
+\draw [fill=ttzzqq] (70.29360967184802,34.03262521588946) circle (2.5pt);
+\draw [fill=yqqqqq] (70.46632124352324,90.90906735751295) circle (2.5pt);
+\draw [fill=yqqqqq] (70.42633408930001,77.74071365934894) circle (2.5pt);
+\end{scriptsize}
+\end{tikzpicture}
